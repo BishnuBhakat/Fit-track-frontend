@@ -64,6 +64,7 @@ export default function Progress() {
       <div className="bg-white text-gray-800 shadow-lg rounded-lg p-6 max-w-4xl mx-auto mb-8">
         <h3 className="text-2xl font-semibold mb-4 text-center">Add Progress</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+           <label className="block text-gray-700 mb-2">Select Date</label>
           <input
             type="date"
             className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
