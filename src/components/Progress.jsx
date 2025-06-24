@@ -64,13 +64,18 @@ export default function Progress() {
       <div className="bg-white text-gray-800 shadow-lg rounded-lg p-6 max-w-4xl mx-auto mb-8">
         <h3 className="text-2xl font-semibold mb-4 text-center">Add Progress</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-           <label className="block text-gray-700 mb-2">Select Date</label>
-          <input
-            type="date"
-            className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
+          <div className="flex flex-col space-y-1">
+            <label htmlFor="date" className="text-gray-700 text-sm font-medium">
+              Select Date
+            </label>
+            <input
+              type="date"
+              id="date"
+              className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </div>
           <input
             type="number"
             className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"

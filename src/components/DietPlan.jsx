@@ -4,7 +4,7 @@ import api from '../api.js';
 export default function DietPlan() {
   const [dietPlans, setDietPlans] = useState([]);
   const [date, setDate] = useState('');
-  const [dietType, setDietType] = useState('Breakfast'); 
+  const [dietType, setDietType] = useState('Breakfast');
   const [description, setDescription] = useState('');
   const [calories, setCalories] = useState('');
   const [nutrition, setNutrition] = useState('');
@@ -37,7 +37,7 @@ export default function DietPlan() {
         },
       });
       setDate('');
-      setDietType('Breakfast'); 
+      setDietType('Breakfast');
       setDescription('');
       setCalories('');
       setNutrition('');
@@ -67,14 +67,20 @@ export default function DietPlan() {
       <div className="bg-white text-gray-800 shadow-lg rounded-lg p-6 max-w-4xl mx-auto mb-8">
         <h3 className="text-2xl font-semibold mb-4 text-center">Add a New Diet Plan</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-           <label className="block text-gray-700 mb-2">Select Date</label>
-          <input
-            type="date"
-            className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            placeholder="Date"
-          />
+          <label className="block text-gray-700 mb-2">Select Date</label>
+          <div className="flex flex-col space-y-1">
+            <label htmlFor="date" className="text-gray-700 text-sm font-medium">
+              Select Date
+            </label>
+            <input
+              type="date"
+              id="date"
+              className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </div>
+
           <select
             className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
             value={dietType}

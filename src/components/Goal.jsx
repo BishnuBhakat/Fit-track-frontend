@@ -65,13 +65,18 @@ export default function Goal() {
             <option value="Muscle Build">Muscle Build</option>
             <option value="Fit and Healthy">Fit and Healthy</option>
           </select>
-           <label className="block text-gray-700 mb-2">Select Date</label>
-          <input
-            type="date"
-            className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
+          <div className="flex flex-col space-y-1">
+            <label htmlFor="date" className="text-gray-700 text-sm font-medium">
+              Select Date
+            </label>
+            <input
+              type="date"
+              id="date"
+              className="border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </div>
           <button
             onClick={addGoal}
             className="bg-green-600 hover:bg-green-700 text-white font-semibold w-full py-3 rounded transition duration-300"
