@@ -6,6 +6,7 @@ import DietPlan from './components/DietPlan';
 import Progress from './components/Progress';
 import Login from './components/Auth/Login'; 
 import Register from './components/Auth/Register'; 
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -14,11 +15,46 @@ function App() {
         <Route path="/" element={<Register />} /> {/* default route link click korlei ekhane jabe  */}
         <Route path="/login" element={<Login />} /> {/* Login route */}
         {/* Protected Routes access korte parbe na without login ba register */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/goals" element={<Goal />} />
-        <Route path="/workouts" element={<Workout />} />
-        <Route path="/diet" element={<DietPlan />} />
-        <Route path="/progress" element={<Progress />} />
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/goals"
+          element={
+            <PrivateRoute>
+              <Goal />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/workouts"
+          element={
+            <PrivateRoute>
+              <Workout />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/diet"
+          element={
+            <PrivateRoute>
+              <DietPlan />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/progress"
+          element={
+            <PrivateRoute>
+              <Progress />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </Router>
   );

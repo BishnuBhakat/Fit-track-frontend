@@ -1,6 +1,8 @@
 import { Navigate } from 'react-router-dom';
 
-export default function PrivateRoute({ children }) {
-  const username = localStorage.getItem('username');
-  return username ? children : <Navigate to="/login" replace />;
-}
+const PrivateRoute = ({ children }) => {
+  const isAuthenticated = localStorage.getItem('isAuthenticated'); // Set this on login/register
+  return isAuthenticated ? children : <Navigate to="/login" />;
+};
+
+export default PrivateRoute;
